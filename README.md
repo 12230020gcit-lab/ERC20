@@ -1,89 +1,52 @@
-CineChain
+# CineChain
 
-Blockchain-based movie ticket purchasing application. Buy movie tickets securely using blockchain technology and get transparent, tamper-proof booking records. With CineChain, users can book movie tickets from anywhere at any time with full trust and zero risk of duplication or fraud.
-
-How to Use CineChain
-
-1.Visit the official CineChain website.
-
-2.Browse the list of available movies.
-
-3.Select the movie you want to watch.
-
-4.Enter the number of tickets you want to buy.
-
-5.Click on Buy Tickets and confirm the transaction using your wallet.
-(Note: Your wallet must have sufficient ETH balance to complete the purchase.)
-
-6.Once the payment is successful:
-
-The available seats are automatically reduced.
-
-Your purchased tickets are recorded on the blockchain.
-
-7.You can view the number of tickets you own for each movie on the My Tickets section.
+**CineChain** is a blockchain-based movie ticket purchasing application. It allows users to buy movie tickets securely using blockchain technology, providing transparent and tamper-proof booking records. With CineChain, users can book tickets from anywhere, anytime, with full trust and zero risk of duplication or fraud.
 
 
-Admin Role (Movie Management)
+## How to Use CineChain
 
-The Admin is responsible only for adding movie details.
+1. Visit the official CineChain website.  
+2. Browse the list of available movies.  
+3. Select the movie you want to watch.  
+4. Enter the number of tickets you want to buy.  
+5. Click **Buy Tickets** and confirm the transaction using your wallet.  
+   > **Note:** Your wallet must have sufficient ETH balance to complete the purchase.  
+6. Once the payment is successful:
+   - The available seats are automatically reduced.
+   - Your purchased tickets are recorded on the blockchain.
+7. You can view the number of tickets you own for each movie in the **My Tickets** section.
 
-The Admin can:
+---
 
-Add movie title
+## Admin Role (Movie Management)
 
-Set ticket price
+The Admin is responsible for managing movie details.  
 
-Set available seats
+The Admin can:  
+- Add movie title  
+- Set ticket price  
+- Set available seats  
 
-The Admin cannot buy tickets as a user and cannot modify user data, ensuring a clear separation of roles and better security.
+**Important:** The Admin cannot buy tickets as a user and cannot modify user data, ensuring a clear separation of roles and better security.
 
+---
 
+## Tech Stack
 
-Tech Stack
-1. Frontend
+**Frontend**  
+- React.js  
+- Ethers.js – For blockchain interaction  
+- MetaMask – Wallet connection  
 
-React.js
+**Smart Contract**  
+- Hardhat – Development environment  
+- Solidity – Smart contract language  
+- Ethereum / Sepolia Testnet – Blockchain network  
 
-Ethers.js – For blockchain interaction
+---
 
-MetaMask – Wallet connection
+## Project Setup
 
-2. Smart Contract
-
-Hardhat – Development environment
-
-Solidity – Smart contract language
-
-Ethereum / Sepolia Testnet – Blockchain network
-
-Project Setup
-1.Open the Project
+### 1. Open the Project
+```bash
 code .
-
-2.smart contract setup
-cd movie-ticketing
-npm i
-
-3.compile smart contracts
-npx hardhat compile
-
-4.Run test
-npx hardhat test
-
-
-5.Deploying to sepolia Testnet
-npx hardhat node
-
-6.Deploy contract
-npx hardhat run scripts/deploy.js --network sepolia
-
-7.Frontend setup
-cd movie-ticketing-frontend
-npm i
-
-8.Start development server 
-npm start
-
-
-

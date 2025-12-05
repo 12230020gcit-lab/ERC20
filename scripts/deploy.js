@@ -1,15 +1,14 @@
-import HardhatPkg from "hardhat";
-const { ethers } = HardhatPkg;
+const hre = require("hardhat");
 
 async function main() {
-  const [deployer] = await ethers.getSigners();
+  const [deployer] = await hre.ethers.getSigners();
   console.log("Deploying contracts with account:", deployer.address);
 
-  const MovieTicket = await ethers.getContractFactory("MovieTicket");
-  const movieTicket = await MovieTicket.deploy(); // no arguments needed
-  await movieTicket.waitForDeployment();
+  const MovieToken = await hre.ethers.getContractFactory("MovieToken");
+  const contract = await MovieToken.deploy();
 
-  console.log("MovieTicket deployed to:", movieTicket.target);
+  // In Ethers v6, address is available directly
+  console.log("MovieToken deployed to:", contract.target || contract.address);
 }
 
 main().catch((error) => {
