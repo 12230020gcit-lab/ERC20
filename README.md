@@ -2,6 +2,7 @@
 
 **CineChain** is a blockchain-based movie ticket purchasing application. It allows users to buy movie tickets securely using blockchain technology, providing transparent and tamper-proof booking records. With CineChain, users can book tickets from anywhere, anytime, with full trust and zero risk of duplication or fraud.
 
+---
 
 ## How to Use CineChain
 
@@ -13,7 +14,7 @@
    > **Note:** Your wallet must have sufficient ETH balance to complete the purchase.  
 6. Once the payment is successful:
    - The available seats are automatically reduced.
-   - Your purchased tickets are recorded on the blockchain.
+   - Your purchased tickets are recorded on the blockchain.  
 7. You can view the number of tickets you own for each movie in the **My Tickets** section.
 
 ---
@@ -23,11 +24,12 @@
 The Admin is responsible for managing movie details.  
 
 The Admin can:  
-- Add movie title  
+- Add a movie title  
 - Set ticket price  
 - Set available seats  
+- Withdraw collected MTK tokens or ETH from the contract  
 
-**Important:** The Admin cannot buy tickets as a user and cannot modify user data, ensuring a clear separation of roles and better security.
+> **Note:** Only the contract owner (Admin) can perform these actions.
 
 ---
 
@@ -38,7 +40,7 @@ The Admin can:
 - Ethers.js – For blockchain interaction  
 - MetaMask – Wallet connection  
 
-**Smart Contract**  
+**Smart Contract / Backend**  
 - Hardhat – Development environment  
 - Solidity – Smart contract language  
 - Ethereum / Sepolia Testnet – Blockchain network  
@@ -47,6 +49,26 @@ The Admin can:
 
 ## Project Setup
 
-### 1. Open the Project
+### 1. Clone the Repository
 ```bash
-code .
+git clone https://github.com/12230020gcit-lab/ERC20.git
+cd movie-ticketing
+
+npm install --save-dev hardhat
+npm install @nomiclabs/hardhat-ethers ethers
+npm install @openzeppelin/contracts
+
+cd movie-ticket-frontend
+npm install
+
+### 1. Clone the Repository
+cd ../
+npx hardhat compile
+
+### Deploy to Local Hardhat Node
+npx hardhat node
+npx hardhat run scripts/deploy.js --network localhost
+
+### Run Frontend
+cd movie-ticket-frontend
+npm start
